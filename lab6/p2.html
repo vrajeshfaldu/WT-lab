@@ -1,0 +1,42 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P2</title>
+</head>
+<body>
+    <input type="button" id="btn" value="click">
+
+     
+    <script>
+        btn.addEventListener("click",()=>{
+            console.log("clicked");
+        });
+        btn.addEventListener("dblclick",()=>{
+            console.log("double click");
+        });
+        btn.addEventListener("mouseover",()=>{
+            console.log("Mouse Over");
+        });
+        btn.addEventListener("mousemove",()=>{
+            console.log("Mouse Move");
+        });
+        btn.addEventListener("mousedown",()=>{
+            console.log("Mouse Down");
+        });
+        btn.addEventListener("mouseup",()=>{
+            console.log("Mouse Up");
+        });
+        btn.addEventListener("mouseout",()=>{
+            console.log("Mouse Out");
+        });
+
+        
+
+        btn.style.width = "200px";
+        btn.style.height = "200px";
+
+    </script>
+</body>
+</html>  

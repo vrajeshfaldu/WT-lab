@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Attendance Tracker</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: center;
+    }
+    .present {
+      color: green;
+      font-weight: bold;
+    }
+    .absent {
+      color: red;
+      font-weight: bold;
+    }
+    #summary {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    #output {
+      font-size: 16px;
+      color: blue;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Student Attendance Tracker</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Roll No</th>
+      <th>Enrollment No</th>
+      <th>Actions</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody id="studentBody">
+    <!-- Student rows will be populated here -->
+  </tbody>
+</table>
+
+<div id="summary">Total Present: 0 | Total Absent: 10</div>
+<button onclick="resetAttendance()">Reset Attendance</button>
+<button onclick="saveAttendance()">Save Attendance</button>
+<div id="output"></div>
+
+<script>
+  var students = [
+    { name: "Amit", rollno: "101", enroll: "EN101", status: "Absent" },
+    { name: "Neha", rollno: "102", enroll: "EN102", status: "Absent" },
+    { name: "Ravi", rollno: "103", enroll: "EN103", status: "Absent" },
+    { name: "Priya", rollno: "104", enroll: "EN104", status: "Absent" },
+    { name: "Karan", rollno: "105", enroll: "EN105", status: "Absent" },
+    { name: "Sonal", rollno: "106", enroll: "EN106", status: "Absent" },
+    { name: "Manav", rollno: "107", enroll: "EN107", status: "Absent" },
+    { name: "Divya", rollno: "108", enroll: "EN108", status: "Absent" },
+    { name: "Anil", rollno: "109", enroll: "EN109", status: "Absent" },
+    { name: "Nisha", rollno: "110", enroll: "EN110", status: "Absent" }
+  ];
+
+  function renderTable() {
+    var tbody = document.getElementById("studentBody");
+    tbody.innerHTML = "";
+    for (var i = 0; i < students.length; i++) {
+      var row = "<tr>";
+      row += "<td>" + students[i].name + "</td>";
+      row += "<td>" + students[i].rollno + "</td>";
+      row += "<td>" + students[i].enroll + "</td>";
+      row += "<td>" +
+        "<button onclick='markPresent(" + i + ")'>Present</button> " +
+        "<button onclick='markAbsent(" + i + ")'>Absent</button>" +
+        "</td>";
+      row += "<td id='status" + i + "' class='absent'>Absent</td>";
+      row += "</tr>";
+      tbody.innerHTML += row;
+    }
+  }
+
+  function markPresent(index) {
+    students[index].status = "Present";
+    var statusCell = document.getElementById("status" + index);
+    statusCell.innerHTML = "Present";
+    statusCell.className = "present";
+    updateSummary();
+  }
+
+  function markAbsent(index) {
+    students[index].status = "Absent";
+    var statusCell = document.getElementById("status" + index);
+    statusCell.innerHTML = "Absent";
+    statusCell.className = "absent";
+    updateSummary();
+  }
+
+  function updateSummary() {
+    var present = 0;
+    var absent = 0;
+    for (var i = 0; i < students.length; i++) {
+      if (students[i].status === "Present") {
+        present++;
+      } else {
+        absent++;
+      }
+    }
+    document.getElementById("summary").innerHTML =
+      "Total Present: " + present + " | Total Absent: " + absent;
+  }
+
+  function resetAttendance() {
+    for (var i = 0; i < students.length; i++) {
+      students[i].status = "Absent";
+      var statusCell = document.getElementById("status" + i);
+      statusCell.innerHTML = "Absent";
+      statusCell.className = "absent";
+    }
+    updateSummary();
+    document.getElementById("output").innerHTML = "";
+  }
+
+  function saveAttendance() {
+    var absentRollnos = [];
+    for (var i = 0; i < students.length; i++) {
+      if (students[i].status === "Absent") {
+        absentRollnos.push(students[i].rollno);
+      }
+    }
+    document.getElementById("output").innerHTML =
+      "Absent Students (Roll No): " + absentRollnos.join(", ");
+  }
+
+  renderTable(); // Load table initially
+</script>
+
+</body>
+</html>

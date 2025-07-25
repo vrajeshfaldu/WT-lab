@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+</head>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    .login-container {
+        width: 80%;
+        margin: 50px auto;
+        background-color: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px gray;
+    }
+
+    table {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    label {
+        font-weight: 500;
+    }
+
+    .login-container button{
+        margin-top: 10px;
+    }
+    .form-control{
+        width: 90%;
+    }
+    /* table{
+        padding: 100px;
+    } */
+    /* .login-container{
+        padding: 100px;
+    } */
+</style>
+
+<body>
+    <div class="login-container">
+        <h3 class="h3">
+            Product Management
+        </h3>
+        <table  >
+            <tr>
+                <td><label for="productname" class="form-label ">Product Name :</label></td>
+                <td><label for="catagory" class="form-label ">Catagory :</label></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="productname" class="form-control "></td>
+                <td><input type="text" id="catagory" class="form-control "></td>
+            </tr>
+            <tr>
+                <td><label for="price" class="form-label">Price :</label></td>
+                <td><label for="image" class="form-label">Image URL :</label></label></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="price" class="form-control"></td>
+                <td><input type="text" id="image" class="form-control"></td>
+            </tr>
+        </table>
+        <button onclick="addProduct()" id="editAddBtn" class="btn btn-primary">ADD</button>
+
+
+    </div>
+    <div id="cardbody"></div>
+    <script>
+        arr = []
+        editIndex = -1
+        function display() {
+            temp = " ";
+            for (i = 0; i < arr.length; i++) {
+                temp += `<div class="card" style="width: 18rem;">
+                        <img src="${arr[i].image}" class="card-img-top" alt="${arr[i].name}">
+                        <div class="card-body">
+                        <h5 class="card-title">${arr[i].name}</h5>
+                        <p class="card-text">${arr[i].catagory}</p>
+                        <p class="card-text">${arr[i].price}</p>
+                        <button onclick="editName(${i})" class="btn btn-success">EDIT</button>
+                        <button onclick="deleteStudent(${i})" class="btn btn-danger">DELETE</button>
+                        </div>
+                        </div>`
+            }
+
+            document.getElementById("cardbody").innerHTML = temp;
+        }
+
+        function addProduct() {
+            name = document.getElementById("productname").value;
+            catagory = document.getElementById("catagory").value;
+            price = document.getElementById("price").value;
+            image = document.getElementById("image").value;
+
+            products = {
+                name: name,
+                catagory: catagory,
+                price: price,
+                image: image
+            }
+
+            if (editIndex != -1) {
+                arr[editIndex].name = name
+                arr[editIndex].catagory = catagory
+                arr[editIndex].price = price
+                arr[editIndex].image = image
+                editIndex = -1
+                document.getElementById("editAddBtn").innerHTML = "ADD"
+            }
+            else {
+                if (name == '' || catagory == " " || price == " " || image == " ") {
+                    alert("Please enter information.")
+                }
+                else {
+                    arr.push(products)
+                }
+            }
+            document.getElementById("productname").value = " "
+            document.getElementById("catagory").value = " "
+            document.getElementById("price").value = " "
+            document.getElementById("image").value = " "
+            display()
+        }
+
+        function deleteStudent(index) {
+            arr.splice(index, 1)
+            display()
+        }
+
+        function editName(index) {
+            editIndex = index
+            document.getElementById("productname").value = arr[index].name
+            document.getElementById("catagory").value = arr[index].catagory
+            document.getElementById("price").value = arr[index].price
+            document.getElementById("image").value = arr[index].image
+            document.getElementById("editAddBtn").innerHTML = "EDIT"
+
+        }
+
+        // function editName(index){
+        //     editName=prompt("Enter the name : ")
+        //     arr[index]=editName
+        //     display()
+        // }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

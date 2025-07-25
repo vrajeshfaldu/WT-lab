@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p1</title>
+</head>
+<body>
+   <button onclick="test()">click for color change</button>
+    <script>
+    function test(){
+        r=Math.floor(Math.random()*255);
+        g=Math.floor(Math.random()*255);
+        b=Math.floor(Math.random()*255);
+        document.body.style.background="rgb("+r+","+g+","+b+")";
+    } 
+     test();
+      setInterval(test,1000);  
+    </script>
+    
+</body>
+</html>

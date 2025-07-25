@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p6</title>
+</head>
+<body>
+    <script>
+        a=['one','two','three','four','five','six','seven','eight','nine','ten']
+        b=['eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen']
+        c=['','twenty','thirty','fourty','fifty','sixty','seventy','eighty','ninty']
+        num=parseInt(prompt("enter number"));
+        result="";
+        if(isNaN(num)){
+            document.writeln("Invalid input");
+        }
+        else if(num==0){
+            document.writeln("Zero");
+        }
+        else if(num<0 ||num>999){
+            document.writeln("Out of range")
+        }
+        else if(num!=0){
+        
+        if (num >= 100) {
+            result += a[Math.floor(num / 100) - 1] + ' hundred '; 
+            num = num % 100;
+        }
+        if (num >= 20) {
+            result += c[Math.floor(num / 10) - 1] + " "; 
+            num = num % 10;
+        }
+         if (num >= 11 && num < 20) {
+            result += b[Math.floor(num % 10) - 1]; 
+        }
+         if (num >= 1 && num <= 10) {
+            result += a[Math.floor(num - 1)]; 
+        }
+    }
+        document.writeln("result= "+result);
+    </script>
+    
+</body>
+</html>

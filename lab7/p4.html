@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>spread</title>
+</head>
+<body>
+    <script>
+
+      let  a=[3,4,5,6,6]
+        let b=[...a,1,2];
+        document.write("Array spread:"+"<br>")
+        document.write(a+"<br>");
+        document.write(b+"<br>");
+        document.write("object spread:"+"<br>")
+        student={
+            name:"varjesh",
+            age:18,
+            branch:"CSE",
+            monumber:6353803277
+        }
+        student2={...student,rollno:173};
+        console.log(student2);
+        document.write(student2.name+"<br>");
+         document.write(student2.age);
+
+    </script>
+    
+</body>
+</html>

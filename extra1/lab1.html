@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <style>
+    li {
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-size: 30px;
+
+
+    }
+
+    a {
+      margin-left: 200px;
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 20px;
+      font-family: cursive;
+      margin-top: 50px;
+      animation-name: content;
+      animation-duration: 2s;
+
+      animation-timing-function: ease-in-out;
+
+
+    }
+
+    .java {
+      background-color: beige;
+      margin-top: 30px;
+    }
+
+    .python {
+      background-color: aliceblue;
+      margin-top: 30px;
+    }
+
+    .html {
+      background-color: rgb(223, 219, 219);
+      margin-top: 30px;
+    }
+
+    .css {
+      background-color: rgb(203, 246, 247);
+      margin-top: 30px;
+    }
+
+    img {
+      height: 200px;
+      width: 200px;
+
+    }
+
+    .css1 {
+      color: rgb(255, 255, 255);
+    }
+
+    .javaimg {
+      height: 200px;
+      width: 200px;
+    }
+
+    body {
+      animation-name: ghj;
+      animation-duration: 2s;
+
+      animation-timing-function: ease-in-out;
+
+
+    }
+
+    @keyframes ghj {
+      from {
+        position: absolute;
+        left: -3000px;
+        top: 0px;
+      }
+
+      to {
+        position: absolute;
+        left: 0px; 
+        top: 0px;
+
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-secondary ">
+    <div class="container-fluid">
+      <a class="navbar-brand text-light" href="#">Home</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item ">
+            <a class="nav-link css1 text-light" href="#">Java</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="#">Python</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="#">HTML</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="#">CSS</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="java d-flex">
+    <img src="download.png" class="img-thumbnail javaimg" alt="...">
+    <p>Java is a versatile, object-oriented programming language developed by Sun Microsystems (now owned by Oracle).
+      It's known for its "write once, run anywhere" capability, thanks to the Java Virtual Machine (JVM). Java is widely
+      used for building various applications, including web applications, Android apps, and enterprise systems. </p>
+  </div>
+  <div class="python d-flex">
+    <img src="py.jpg" class="img-thumbnail" alt="...">
+    <p>Python is a versatile, high-level programming language known for its readability and ease of use. It's widely
+      used in web development, data science, machine learning, and more, thanks to its simple syntax and large standard
+      library. </p>
+  </div>
+  <div class="html d-flex">
+    <img src="html.jpg" class="img-thumbnail" alt="...">
+    <p>HTML, short for HyperText Markup Language, is the foundation of the World Wide Web. It's a markup language used
+      to structure and present web page content, defining elements like text, images, links, and multimedia. HTML
+      provides the framework for web browsers to display information, organizing content into a meaningful structure.
+    </p>
+  </div>
+
+  <div class="css d-flex">
+    <img src="css.jpg" class="img-thumbnail" alt="...">
+    <p>Cascading Style Sheets (CSS) is a style sheet language used for specifying the presentation and styling of a
+      document written in a markup language such as HTML or XML (including XML dialects such as SVG, MathML or XHTML).
+    </p>
+  </div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

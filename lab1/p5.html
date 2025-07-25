@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p5</title>
+</head>
+<body>
+    <script>
+        a=parseInt(prompt("enter  number"))
+        temp=a
+        p=0;
+        m=0;
+        while(a!=0){
+            m=parseInt(a%10);
+            p=(p*10+m);
+            a=parseInt(a/10);
+            
+        }
+        if(p==temp){
+            document.writeln("palindrone");
+        }
+        else{
+            document.writeln("not palindrone");
+        }
+    </script>
+    
+</body>
+</html>

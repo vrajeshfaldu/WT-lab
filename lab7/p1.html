@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>callbakcfunction</title>
+</head>
+<body>
+    <script>
+        function sum(a,b,callback){
+            sum=10+20;
+            callback(sum);
+            
+        }
+        function printans(ans){
+            document.write("sum="+ans);
+        }
+        sum(10,20,printans)
+    </script>
+</body>
+</html>

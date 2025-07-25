@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P4</title>
+</head>
+<body>
+    <input type="txet" id="inputTxt">
+
+    <!-- <p id="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, a deserunt et, eos officiis cumque adipisci nisi esse debitis nobis ut sint omnis illum ipsum est fugiat incidunt delectus saepe!</p> -->
+    
+    <script>
+        inputTxt.addEventListener("blur",()=>{
+            console.log("blur");
+        });
+        inputTxt.addEventListener("change",()=>{
+            console.log("change");
+        });
+        inputTxt.addEventListener("focus",()=>{
+            console.log("focus");
+        });
+        inputTxt.addEventListener("reset",()=>{
+            console.log("reset");
+        });
+        inputTxt.addEventListener("select",()=>{
+            console.log("select");
+        });
+        inputTxt.addEventListener("submit",()=>{
+            console.log("submit");
+        });
+        
+        inputTxt.style.width = "200px";
+        inputTxt.style.height = "30px";
+        inputTxt.style.fontSize = "50px";
+
+    </script>
+</body>
+</html>
