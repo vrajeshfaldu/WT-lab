@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+   <input type="text" class="in">
+   <div></div>
+            <script>
+           $(document).ready(function(){
+            $("input").mousemove(function(event){
+
+               let data=$("input").val().trim();
+               regExp =new RegExp(/^\d{2}[A-Za-z]{2,3}\d{4,5}$/);
+                if(regExp.test(data)){
+                      $("input").css ({borderColor:"green"});
+                    $("div").text("valid").css ({color:"green"});
+                    
+                }
+                else{
+                     $("input").css ({borderColor:"red"});
+                     $("div").text("Invalid").css ({color:"red"});
+                }
+
+    
+        })  
+        })
+        
+            </script>
+    
+</body>
+</html>
