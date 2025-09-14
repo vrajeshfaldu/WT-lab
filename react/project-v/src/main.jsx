@@ -25,6 +25,5 @@ createRoot(document.getElementById('root')).render(
       <Greet/>
       <h1>{name}</h1>
 
-
   </StrictMode>
 )
